@@ -1,5 +1,7 @@
 package com.example.simpleparadox.listycity;
 
+import static java.util.Collections.*;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,8 @@ import androidx.annotation.Nullable;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CustomList extends ArrayAdapter<City> {
 
@@ -54,7 +58,12 @@ public class CustomList extends ArrayAdapter<City> {
     public void addCity(City city){
         cities.add(city);
     }
+    public ArrayList<City> getCities(){
+        ArrayList<City> list = cities;
+        Collections.sort(Collections.<City>unmodifiableList(list));
+        return list;
 
+    }
     public void deleteCity(City city){
         cities.remove(city);
     }

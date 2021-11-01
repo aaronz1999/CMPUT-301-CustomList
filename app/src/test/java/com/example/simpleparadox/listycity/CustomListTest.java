@@ -24,7 +24,14 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(listSize + 1, list.getCount());
     }
+    @Test
+    void testHasCity(){
 
+        City city = new City("Calgary", "Alberta");
+        assertFalse(list.getCities().contains(city));// doesn't contain city Calgary
+        list.addCity(city);
+        assertTrue(list.getCities().contains(city));// now city should contain city Calgary
+    }
     @Test
     public void deleteCityTest(){
         int listSize = list.getCount();
