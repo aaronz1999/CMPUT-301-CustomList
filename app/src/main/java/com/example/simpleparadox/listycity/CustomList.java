@@ -53,17 +53,20 @@ public class CustomList extends ArrayAdapter<City> {
     }
     @Override
     public int getCount() {
-        return cities.size();
+
     }
     public void addCity(City city){
         cities.add(city);
     }
+    /*
     public ArrayList<City> getCities(){
         ArrayList<City> list = cities;
         Collections.sort(Collections.<City>unmodifiableList(list));
         return list;
 
     }
+
+     */
     public void deleteCity(City city){
         cities.remove(city);
     }

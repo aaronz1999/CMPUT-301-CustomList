@@ -24,6 +24,7 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(listSize + 1, list.getCount());
     }
+    /*
     @Test
     void testHasCity(){
 
@@ -32,6 +33,8 @@ public class CustomListTest {
         list.addCity(city);
         assertTrue(list.getCities().contains(city));// now city should contain city Calgary
     }
+
+     */
     @Test
     public void deleteCityTest(){
         int listSize = list.getCount();
@@ -41,5 +44,18 @@ public class CustomListTest {
         list.deleteCity(city);
         assertEquals(listSize + 0, list.getCount());
 
+    }
+    @Test
+    void countCitiesTest(){
+        int listSize = list.getCount();
+        City city1 = new City("Toronto", "Ontario");
+        City city2 = new City("Vancouver", "British Columbia");
+
+        assertEquals(listSize + 0,list.getCount());
+        list.addCity(city1);
+        list.addCity(city2);
+        assertEquals(listSize + 2,list.getCount());
+        list.deleteCity(city2);
+        assertEquals(listSize + 1,list.getCount());
     }
 }
